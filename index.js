@@ -37,11 +37,11 @@ const moveLeft =  () => {
 
 // leftBtn.addEventListener('click', moveLeft);
 
-// const displayNone = () => {
-//   pictures.forEach((img) => {
-//     img.style.display = 'none';
-//   })
-// }
+const displayNone = () => {
+  pictures.forEach((img) => {
+    img.style.display = 'none';
+  })
+}
 
 // $('input').on('change', function() {
 //   $('body').toggleClass('blue');
@@ -75,8 +75,7 @@ async function updateCryptoValues() {
   const cryptoData = await getCryptoData();
   if (cryptoData) {
     const btcUUID = 'Qwsogvtv82FCd';
-    const btcResponse = await fetch(`https://coinranking.com/coin/${btcUUID}`);
-    
+    const btcResponse = await fetch(`https://coinranking.com/coin/${btcUUID}/bitcoin-btc`);
     const btcData = await btcResponse.json();
 
     const btcPriceElement = document.getElementById('btc-price');
