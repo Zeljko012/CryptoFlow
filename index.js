@@ -33,25 +33,24 @@ const moveLeft =  () => {
   pictures[imgNum].style.display = 'block';
 }
 
-rightBtn.addEventListener('click', moveRight);
+// rightBtn.addEventListener('click', moveRight);
 
-leftBtn.addEventListener('click', moveLeft);
+// leftBtn.addEventListener('click', moveLeft);
 
-const displayNone = () => {
-  pictures.forEach((img) => {
-    img.style.display = 'none';
-  })
-}
+// const displayNone = () => {
+//   pictures.forEach((img) => {
+//     img.style.display = 'none';
+//   })
+// }
 
-$('input').on('change', function() {
-  $('body').toggleClass('blue');
-});
-
-
+// $('input').on('change', function() {
+//   $('body').toggleClass('blue');
+// });
 
 
 
-const url = 'https://coinranking1.p.rapidapi.com/exchange/-zdvbieRdZ';
+document.addEventListener('DOMContentLoaded', function() {
+  const url = 'https://coinranking1.p.rapidapi.com/exchange/-zdvbieRdZ';
 const options = {
   method: 'GET',
   timePeriod: '3m',
@@ -61,11 +60,10 @@ const options = {
     'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
   }
 };
-const apiKey = 'https://coinranking1.p.rapidapi.com/exchange/-zdvbieRdZ';
 
 async function getCryptoData() {
   try {
-    const response = await fetch('https://coinranking1.p.rapidapi.com/exchange/-zdvbieRdZ');
+    const response = await fetch(url, options);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -77,7 +75,8 @@ async function updateCryptoValues() {
   const cryptoData = await getCryptoData();
   if (cryptoData) {
     const btcUUID = 'Qwsogvtv82FCd';
-    const btcResponse = await fetch(`https://coinranking.com/coin/${btcUUID}/bitcoin-btc`);
+    const btcResponse = await fetch(`https://coinranking.com/coin/${btcUUID}`);
+    
     const btcData = await btcResponse.json();
 
     const btcPriceElement = document.getElementById('btc-price');
@@ -86,11 +85,6 @@ async function updateCryptoValues() {
     // Ažuriranje vrednosti HTML elemenata
     btcPriceElement.textContent = btcData.price;
     btcChangeElement.textContent = btcData.change;
-  
-
-    // // Postavljanje cene i promene za Bitcoin
-    // btcPriceElement.textContent = '$' + btcData.data.coins[0].price;
-    // btcChangeElement.textContent = btcData.data.coins[0].change + '%';
 
     // Ažuriranje za Ethereum
     const ethPriceElement = document.getElementById('eth-price');
@@ -122,4 +116,9 @@ setTimeout(updateCryptoValues, 3 * 60 * 1000);
 
 // Pozivanje funkcije za ažuriranje vrednosti
 updateCryptoValues();
+
+});
+
+
+
 
