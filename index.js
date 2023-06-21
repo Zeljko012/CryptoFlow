@@ -49,72 +49,70 @@ const displayNone = () => {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  const url = 'https://coinranking1.p.rapidapi.com/exchange/-zdvbieRdZ';
-const options = {
-  method: 'GET',
-  timePeriod: '3m',
-  headers: {
-    referenceCurrencyUuid: 'yhjMzLPhuIDl',
-    'X-RapidAPI-Key': '48ee0b47edmsh323d19c5abe7887p13fd74jsnec692c97f537',
-    'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+document.addEventListener('DOMContentLoaded', async function() {
+  const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd';
+
+  async function getCryptoData() {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log('Greška prilikom dobavljanja podataka o kriptovalutama:', error);
+    }
   }
-};
 
-async function getCryptoData() {
-  try {
-    const response = await fetch(url, options);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log('Greška prilikom dobavljanja podataka o kriptovalutama:', error);
+  function formatNumber(number) {
+    return number.toLocaleString('en-US');
   }
-}
-
-async function updateCryptoValues() {
-  const cryptoData = await getCryptoData();
-  if (cryptoData) {
-    const btcUUID = 'Qwsogvtv82FCd';
-    const btcResponse = await fetch(`https://coinranking.com/coin/${btcUUID}/bitcoin-btc`);
-    const btcData = await btcResponse.json();
-
-    const btcPriceElement = document.getElementById('btc-price');
-    const btcChangeElement = document.getElementById('btc-change');
-
-    // Ažuriranje vrednosti HTML elemenata
-    btcPriceElement.textContent = btcData.price;
-    btcChangeElement.textContent = btcData.change;
-
-    // Ažuriranje za Ethereum
-    const ethPriceElement = document.getElementById('eth-price');
-    const ethChangeElement = document.getElementById('eth-change');
-    ethPriceElement.textContent = '$' + cryptoData.data.coins[1].price;
-    ethChangeElement.textContent = cryptoData.data.coins[1].change + '%';
-
-    // Ažuriranje za Tether USD
-    const usdtPriceElement = document.getElementById('usdt-price');
-    const usdtChangeElement = document.getElementById('usdt-change');
-    usdtPriceElement.textContent = '$' + cryptoData.data.coins[2].price;
-    usdtChangeElement.textContent = cryptoData.data.coins[2].change + '%';
-
-    // Ažuriranje za BNB
-    const bnbPriceElement = document.getElementById('bnb-price');
-    const bnbChangeElement = document.getElementById('bnb-change');
-    bnbPriceElement.textContent = '$' + cryptoData.data.coins[3].price;
-    bnbChangeElement.textContent = cryptoData.data.coins[3].change + '%';
-
-    // Ažuriranje za USDC
-    const usdcPriceElement = document.getElementById('usdc-price');
-    const usdcChangeElement = document.getElementById('usdc-change');
-    usdcPriceElement.textContent = '$' + cryptoData.data.coins[4].price;
-    usdcChangeElement.textContent = cryptoData.data.coins[4].change + '%';
+  
+  function updateCryptoValues() {
+    getCryptoData()
+      .then(cryptoData => {
+        const btcData = cryptoData.find(coin => coin.id === 'bitcoin');
+        const ethData = cryptoData.find(coin => coin.id === 'ethereum');
+        const usdtData = cryptoData.find(coin => coin.id === 'tether');
+        const bnbData = cryptoData.find(coin => coin.id === 'binancecoin');
+        const usdcData = cryptoData.find(coin => coin.id === 'usd-coin');
+  
+        const btcPriceElement = document.getElementById('btc-price');
+        const btcChangeElement = document.getElementById('btc-change');
+        btcPriceElement.textContent = '$' + formatNumber(btcData.current_price);
+        btcChangeElement.textContent = formatNumber(btcData.price_change_percentage_24h) + '%';
+        btcChangeElement.classList.add(btcData.price_change_percentage_24h >= 0 ? 'positive' : 'negative');
+  
+        const ethPriceElement = document.getElementById('eth-price');
+        const ethChangeElement = document.getElementById('eth-change');
+        ethPriceElement.textContent = '$' + formatNumber(ethData.current_price);
+        ethChangeElement.textContent = formatNumber(ethData.price_change_percentage_24h) + '%';
+        ethChangeElement.classList.add(ethData.price_change_percentage_24h >= 0 ? 'positive' : 'negative');
+  
+        const usdtPriceElement = document.getElementById('usdt-price');
+        const usdtChangeElement = document.getElementById('usdt-change');
+        usdtPriceElement.textContent = '$' + formatNumber(usdtData.current_price);
+        usdtChangeElement.textContent = formatNumber(usdtData.price_change_percentage_24h) + '%';
+        usdtChangeElement.classList.add(usdtData.price_change_percentage_24h >= 0 ? 'positive' : 'negative');
+  
+        const bnbPriceElement = document.getElementById('bnb-price');
+        const bnbChangeElement = document.getElementById('bnb-change');
+        bnbPriceElement.textContent = '$' + formatNumber(bnbData.current_price);
+        bnbChangeElement.textContent = formatNumber(bnbData.price_change_percentage_24h) + '%';
+        bnbChangeElement.classList.add(bnbData.price_change_percentage_24h >= 0 ? 'positive' : 'negative');
+  
+        const usdcPriceElement = document.getElementById('usdc-price');
+        const usdcChangeElement = document.getElementById('usdc-change');
+        usdcPriceElement.textContent = '$' + formatNumber(usdcData.current_price);
+        usdcChangeElement.textContent = formatNumber(usdcData.price_change_percentage_24h) + '%';
+        usdcChangeElement.classList.add(usdcData.price_change_percentage_24h >= 0 ? 'positive' : 'negative');
+      })
+      .catch(error => {
+        console.log('Greška prilikom dobavljanja podataka o kriptovalutama:', error);
+      });
   }
-}
-
-setTimeout(updateCryptoValues, 3 * 60 * 1000);
-
-// Pozivanje funkcije za ažuriranje vrednosti
-updateCryptoValues();
+  
+  setTimeout(updateCryptoValues, 3 * 60 * 1000);
+  updateCryptoValues();
+  
 
 });
 

@@ -875,6 +875,15 @@ input:focus {
   padding: 20px;
 }
 
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+
 
 /* @media (min-width: 576px) {
   .logo {
