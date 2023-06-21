@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <title>CryptoFlow</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=SF+Pro">
+
+    </head>
+    <body>
+        <nav>
+            <div class="menu-toggle"><i class="fa fa-bars"></i>
+                <img src="images/Logo full.png">
+                <div class="header-button-wrapper">
+                    <button onclick="mobileMenu()">
+                        <label class="burger" for="burger-label">
+                          <input type="checkbox" id="burger">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </label>
+                      </button>
+                      
+                </div>
+                <ul class="navigation">
+                    <li><a href="#home-section">Home</a></li>
+                    <li><a href="#projects-section">Market</a></li>
+                    <li><a href="#about-me-section">Portfolio</a></li>
+                    <li><a href="#contact-section">News</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="fs-container">
+                <div class="first-section">
+                    <div class="mars-wrapper">
+                        <div class="fs-text-wrapper">
+                            <div class="column-1">
+                                <h1>All-in-One Crypto Tracking Solution</h1>
+                            </div>
+                            <div class="column-2">
+                                <h2>Track. Analyze. Thrive.</h2>
+                            </div>
+                            <div class="column-3">
+                                <button class="learn-more">
+                                    <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                    </span>
+                                    <span class="button-text">Learn More</span>
+                                </button>
+                            </div>
+                        </div>
+                        <img class="fs-mars" src="images/landing-mars.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="second-section">
+                <div class="item-1">
+                    <div class="column-4">
+                        <h3 class="second-section-header">Market</h3>
+                    </div>
+                    <div class="column-5">
+                        <img class="second-section-icon" src="images/image 4.png">
+                        <div class="second-section-item-1">
+                            <p class="second-section-p">Bitcoin BTC</p>
+                        </div>
+                        <div class="second-section-item-2" id="btc-price"></div>
+                        <div class="second-section-item-3" id="btc-change"></div>
+                    </div>
+                    <div class="column-5">
+                        <img class="second-section-icon" src="images/image 5.png">
+                        <div class="second-section-item-1">
+                            <p class="second-section-p">Ethereum ETH</p>
+                        </div>
+                        <div class="second-section-item-2" id="eth-price">$1,866.29</div>
+                        <div class="second-section-item-3" id="eth-change">-2.55%</div>
+                    </div>
+                    <div class="column-5">
+                        <img class="second-section-icon" src="images/image 6.png">
+                        <div class="second-section-item-1">
+                            <p class="second-section-p">Tether USDT</p>
+                        </div>
+                        <div class="second-section-item-2" id="usdt-price">$1,866.29</div>
+                        <div class="second-section-item-3" id="usdt-change">-2.55%</div>
+                    </div>
+                    <div class="column-5">
+                        <img class="second-section-icon" src="images/image 7.png">
+                        <div class="second-section-item-1">
+                            <p class="second-section-p">BNB BNB</p>
+                        </div>
+                        <div class="second-section-item-2" id="bnb-price">$1,866.29</div>
+                        <div class="second-section-item-3" id="bnb-change">-2.55%</div>
+                    </div>
+                    <div class="column-5">
+                        <img class="second-section-icon" src="images/image 8.png">
+                        <div class="second-section-item-1">
+                            <p class="second-section-p">USD Coin USDC</p>
+                        </div>
+                        <div class="second-section-item-2" id="usdc-price">$1,866.29</div>
+                        <div class="second-section-item-3" id="usdc-change">-2.55%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="third-section">
+                <div class="third-section-img-wrapper"></div>
+                    <img src="images/photo-1630694093867-4b947d812bf0 3.png">
+                    <div class="third-section-real-wrapper">
+                        <div class="item-3">
+                            <h3 class="third-section-title">Real-time <br> crypto tracking</h3>
+                        </div>
+                        <div class="item-4">
+                            <div class="column-6">
+                                <img class="third-section-check-img" src="images/check mark.png">
+                                <h3 class="third-section-h3">Trusted by users worldwide.</h3>
+                            </div>
+                            <div class="column-6">
+                                <img class="third-section-check-img" src="images/check mark.png">
+                                <h3 class="third-section-h3">Delivering excellence and reliability.</h3>
+                            </div>
+                            <div class="column-6">
+                                <img class="third-section-check-img" src="images/check mark.png">
+                                <h3 class="third-section-h3">Building trust through exceptional service.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="fourth-section">
+                <div class="fourth-section-header-wrapper">
+                    <h2 class="foruth-section-header">News</h2>
+                </div>
+                <div class="fourth-section-side-wrapper">
+                    <div class="item-5">
+                        <div class="column-7">
+                            <h3 class="fourth-section-left-item-title">Bitcoin Breaks New Record: The <br> Rise and Rise of Cryptocurrency</h3>
+                        </div>
+                        <div class="column-8">
+                            <h4 class="fourth-section-subtitle">As Bitcoin surpasses all-time high, crypto <br> enthusiasts predict a bullish market ahead</h4>
+                        </div>
+                        <div class="column-9">
+                            <button class="learn-more">
+                                <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">Learn More</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-6">
+                        <div class="container2">
+                            <input type="radio" name="slider" id="item-1" checked>
+                            <input type="radio" name="slider" id="item-2">
+                            <input type="radio" name="slider" id="item-3">
+                          <div class="cards">
+                            <label class="card" for="item-1" id="song-1">
+                              <img src="images/slika 9.png" alt="song">
+                            </label>
+                            <label class="card" for="item-2" id="song-2">
+                              <img src="images/slika 10.png" alt="song">
+                            </label>
+                            <label class="card" for="item-3" id="song-3">
+                              <img src="images/slika 11.png" alt="song">
+                            </label>
+                          </div>
+                          <div class="player">
+                            <div class="upper-part">
+                              <div class="play-icon">
+                                <svg width="20" height="20" fill="#2992dc" stroke="#2992dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
+                                  <defs/>
+                                  <path d="M5 3l14 9-14 9V3z"/>
+                                </svg>
+                              </div>
+                              <div class="info-area" id="test">
+                                <label class="song-info" id="song-info-1">
+                                  <div class="title">Exploring the Power of Crypto</div>
+                                  <div class="sub-line">
+                                    <div class="subtitle">Zeljko</div>
+                                  </div>
+                                </label>
+                                <label class="song-info" id="song-info-2">
+                                  <div class="title">How Governments Plan to Navigate the Crypto</div>
+                                  <div class="sub-line">
+                                    <div class="subtitle">Zeljko</div>
+                                  </div>
+                                </label>
+                                <label class="song-info" id="song-info-3">
+                                    <div class="title">Bitcoin Breaks New Record</div>
+                                    <div class="sub-line">
+                                    <div class="subtitle">Zeljko</div>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="progress-bar">
+                              <span class="progress"></span>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="fifth-section">
+                <div class="item-7">
+                    <div class="column-10">
+                        <h2 class="fifth-section-title">Subscribe to our newsletter <br> and stay updated</h2>
+                    </div>
+                    <div class="column-11">
+                        <h3 class="fifth-section-subtitle-title">Join our community of crypto enthusiasts and never <br> miss a beat in the world of digital currencies.</h3>
+                    </div>
+                    <div class="column-12">
+                        <form class="form">
+                            <input class="input" placeholder="E-mail adress" required="" type="text">
+                        </form>
+                    </div>
+                    <div class="column-13">
+                        <Button class="fifth-section-btn">Subscribe</Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="sixth-section">
+                <div class="six-section-wrapper">
+                    <div class="item-8">
+                        <img src="images/Logo wht.png">
+                    </div>
+                    <div class="item-9">
+                        <ul class="footer-navigation">
+                            <li><a href="#home-section">Home</a></li>
+                            <li><a href="#projects-section">Market</a></li>
+                            <li><a href="#about-me-section">News</a></li>
+                        </ul>
+                    </div>
+                    <div class="item-10">
+                        <a href="#about-me-section">contact@cryptoflow.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="seventh-section">
+                <div class="seventh-section-wrapper">
+                    <h4 class="privacy">Privacy Policy</h4>
+                    <h4 class="flow">FlowGarden 2023</h4>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="index.js"></script>
+    </body>
+</html>
