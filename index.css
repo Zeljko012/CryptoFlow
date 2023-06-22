@@ -104,6 +104,24 @@ nav {
 }
 }
 
+@media (min-width: 576px) {
+  .menu-toggle img {
+width: 60%;
+  }
+  }
+  
+  
+  @media (min-width: 1201px) {
+  .menu-toggle img {
+      display: block;
+      font-size: 24px;
+      cursor: pointer;
+      text-align: center;
+      margin: auto;
+      width: auto;
+  }
+  }
+
 .menu-toggle button {
     display: none;
 }
@@ -178,7 +196,8 @@ nav {
 
 @media (min-width: 576px) {
   .first-section-title {
-    font-size: 70px;
+    font-size: 100px;
+    margin-bottom: 150px;
   }
   }
   
@@ -191,7 +210,7 @@ nav {
 
   @media (min-width: 576px) {
     .first-section-subtitle {
-      font-size: 55px;
+      font-size: 75px;
     }
     }
     
