@@ -174,12 +174,24 @@ nav {
     position: relative;
   }
 
-.mars-wrapper {
+@media (min-width: 576px) {
+  .mars-wrapper {
     background-image: url(images/pexels-tomas-anunziata-412026\ 2.png);
     background-size: cover;
     position: relative;
-    height: 170vh;
+    height: 150vh;
 }
+  }
+  
+  
+  @media (min-width: 1201px) {
+    .mars-wrapper {
+      background-image: url(images/pexels-tomas-anunziata-412026\ 2.png);
+      background-size: cover;
+      position: relative;
+      height: 100vh;
+  }
+  }
 
 .fs-mars{
     position: absolute;
