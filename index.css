@@ -230,7 +230,7 @@ width: 60%;
 
 @media (min-width: 576px) {
 .mars-wrapper {
-  background-image: url(images/pexels-tomas-anunziata-412026\ 2.png);
+  background-image: url(images/pexels-tomas-anunziata-412026\ 2.webp);
   background-size: cover;
   position: relative;
   height: 160vh;
@@ -240,7 +240,7 @@ width: 60%;
   
 @media (min-width: 1201px) {
 .mars-wrapper {
-  background-image: url(images/pexels-tomas-anunziata-412026\ 2.png);
+  background-image: url(images/pexels-tomas-anunziata-412026\ 2.webp);
   background-size: cover;
   position: relative;
   height: 100vh;
