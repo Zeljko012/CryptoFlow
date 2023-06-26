@@ -981,7 +981,6 @@ input[type=radio] {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* height: 400px; */
 }
   }
   
@@ -1333,7 +1332,7 @@ input:focus {
 .footer-navigation {
   display: block;
   list-style-type: none;
-  gap: 10px; /* Razmak između elemenata */
+  gap: 10px;
   padding: 0%;
   margin: 0%;
   padding-bottom: 200px;
@@ -1345,7 +1344,7 @@ input:focus {
 .footer-navigation {
   display: flex;
   list-style-type: none;
-  gap: 10px; /* Razmak između elemenata */
+  gap: 10px;
   padding: 0%;
   margin: 0%;
   padding-bottom: 0;
