@@ -1,9 +1,20 @@
 function mobileMenu() {
-    let checkbox = document.getElementById('burger');
-    let menu = document.querySelector('.navigation');
-    menu.classList.toggle('active');
-    checkbox.checked = !checkbox.checked;
-  }
+  let checkbox = document.getElementById('burger');
+  let menu = document.querySelector('.navigation');
+
+  // Zatvori meni ako se klikne na sekciju unutar menija
+  menu.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      menu.classList.remove('active');
+      checkbox.checked = false;
+    }
+  });
+
+  // Otvori meni postepeno (uz pomoć CSS tranzicije)
+  menu.classList.toggle('active');
+  checkbox.checked = !checkbox.checked;
+}
+
   
 
 let rightBtn = document.querySelector('#right-btn');
@@ -46,6 +57,19 @@ const displayNone = () => {
 // $('input').on('change', function() {
 //   $('body').toggleClass('blue');
 // });
+
+const navigationLinks = document.querySelectorAll('.navigation a');
+
+navigationLinks.forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    
+    const targetId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    
+    targetSection.scrollIntoView({behavior: 'smooth'});
+  });
+});
 
 
 
