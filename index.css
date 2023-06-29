@@ -76,7 +76,7 @@ nav {
 .menu-toggle {
   display: flex;
   font-size: 24px;
-  cursor: pointer;
+  cursor: none;
   text-align: center;
   align-items: center;
   margin: auto;
@@ -271,16 +271,32 @@ width: 60%;
   right: 0%;
 }
 
-.burger {
-  position: relative;
-  width: 40px;
-  height: 30px;
-  background: transparent;
-  cursor: pointer;
-  display: block;
-  z-index: 1;
-  margin-right: 60px;
-}
+@media (min-width: 576px) {
+  .burger {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: none;
+    display: block;
+    z-index: 1;
+    margin-right: 60px;
+  }
+    }
+    
+    
+  @media (min-width: 1201px) {
+    .burger {
+      position: relative;
+      width: 40px;
+      height: 30px;
+      background: transparent;
+      cursor: pointer;
+      display: block;
+      z-index: 1;
+      margin-right: 60px;
+    }
+  }
 
 .burger input {
 display: none;
