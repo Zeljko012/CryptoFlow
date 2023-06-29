@@ -353,7 +353,7 @@ left: 5px;
 button {
   position: relative;
   display: inline-block;
-  cursor: pointer;
+  cursor: none;
   outline: none;
   border: 0;
   vertical-align: middle;
@@ -978,16 +978,32 @@ input[type=radio] {
   display: none;
 }
 
-.card {
-  position: absolute;
-  width: 60%;
-  height: 100%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  transition: transform .4s ease;
-  cursor: pointer;
-}
+@media (min-width: 576px) {
+  .card {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform .4s ease;
+    cursor: none;
+  }
+    }
+  
+  
+  @media (min-width: 1201px) {
+    .card {
+      position: absolute;
+      width: 60%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transition: transform .4s ease;
+      cursor: pointer;
+    }
+  }
 
 @media (min-width: 576px) {
 .container2 {
@@ -1002,9 +1018,8 @@ input[type=radio] {
   align-items: center;
 }
   }
-  
-  
-  
+
+
 @media (min-width: 1201px) {
 .container2 {
   width: 100%;
